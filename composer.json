@@ -1,0 +1,16 @@
+{
+    "name": "jeansimondewitt/workopia-php",
+    "description": "Job-listing application",
+    "authors": [
+        {
+            "name": "Jean-Simon de Witt",
+            "email": "jeansimon.dewitt@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Framework\\": "Framework/",
+        "App\\": "App/"
+      }  
+    }
+}
