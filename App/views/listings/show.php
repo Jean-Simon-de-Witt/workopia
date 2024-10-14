@@ -10,9 +10,10 @@
         Back To Listings
       </a>
       <div class="flex space-x-4 ml-4">
-        <a href="/edit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Edit</a>
+        <a href="/listings/edit/<?=$listing->id?>" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Edit</a>
         <!-- Delete Form -->
         <form method="POST">
+          <input type="hidden" name="_method" value="DELETE">
           <button type="submit" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded">Delete</button>
         </form>
         <!-- End Delete Form -->
@@ -32,9 +33,11 @@
                 >Local</span
               >
             </li>
-            <li class="mb-2">
-              <strong>Tags: </strong><?=$listing->tags?>
-            </li>
+            <?php if(isset($listing->tags)) : ?>
+                <li class="mb-2">
+                  <strong>Tags:</strong> <?= $listing->tags ?>
+                </li>
+                <?php endif; ?>
           </ul>
         </div>
       </div>
